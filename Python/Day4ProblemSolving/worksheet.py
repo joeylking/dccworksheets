@@ -99,6 +99,17 @@ happy_number(15)
 # a. A prime number is a number that is only divisible by one and itself. 
 # b. Write a method that prints out all prime numbers between 1 and 100  
 
+def prime_number_check(num1, num2):
+    numbers = list(range(num1, num2 +1))
+    for number in numbers:
+        if number > 1:
+            for i in range(2, number):
+                if (number % i) == 0:
+                    break
+            else:
+                print(number)
+
+prime_number_check(1, 100)
 
 
 # 3. Fibonacci 
@@ -107,3 +118,6 @@ happy_number(15)
 # b. Write a method that does the Fibonacci sequence starting at 1 
 # c. HARDER VERSION: Write a method that does the Fibonacci sequence starting at a 
 # number that a user inputs 
+
+def fibonacci(num1, num2):
+    print(num1)
