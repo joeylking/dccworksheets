@@ -15,7 +15,7 @@ def reverse_string(string):
 
 
 reverse_string("Hello")
-
+print( 50 * "-")
 # 2. Capitalize letter
 # a. Write code that takes a string as input and capitalize the first letter of each word. Words will be separated by only one space. i.e. “hello world” should be outputted as “Hello World”
 
@@ -32,7 +32,7 @@ reverse_string("Hello")
 str_hw = "hello world"
 caps = str_hw.title()
 print(caps)
-
+print( 50 * "-")
 # 3. Compress a string of characters
 # a. For example, an input of "aaabbbbbccccaacccbbbaaabbbaaa" would compress to "3a5b4c2a3c3b3a3b3a"
 
@@ -43,14 +43,12 @@ def compress(string):
         if string[char] == string[char + 1]:
             x += 1
         else:
-            # compressed_str = str(x) + compressed_str + string[char]
             compressed_str = compressed_str + str(x) + string[char]
             x = 1    
-    # compressed_str = str(x)  + compressed_str + string[char+1]
-            # compressed_str = str(x) + compressed_str + string[char]
     compressed_str = compressed_str + str(x) + string[char]
     print(compressed_str)
 compress("aaabbbbbccccaacccbbbaaabbbaaa")
+print( 50 * "-")
 
 # 4. BONUS CHALLENGE: Palindrome
 # a. A word, phrase, or sequence that reads the same backward as forward i.e. madam
@@ -71,6 +69,7 @@ def palindrome_check(string):
     
 palindrome_check("hello")
 palindrome_check("madam")
+print( 50 * "-")
 
 # 1. Happy Numbers 
 # a. https://en.wikipedia.org/wiki/Happy_number 
@@ -95,6 +94,7 @@ def happy_number(number):
 happy_number(19)
 happy_number(13)
 happy_number(15)
+print( 50 * "-")
 # 2. Prime Numbers 
 # a. A prime number is a number that is only divisible by one and itself. 
 # b. Write a method that prints out all prime numbers between 1 and 100  
@@ -110,6 +110,7 @@ def prime_number_check(num1, num2):
                 print(number)
 
 prime_number_check(1, 100)
+print( 50 * "-")
 
 
 # 3. Fibonacci 
@@ -120,4 +121,54 @@ prime_number_check(1, 100)
 # number that a user inputs 
 
 def fibonacci(num1, num2):
-    print(num1)
+    count = num1
+
+
+
+fibonacci(1, 100)
+print( 50 * "-")
+
+# 1. Given a list of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice.
+# a. Use Case:i. Given numbers in a list: [5, 17, 77, 50] ii. Target: 55
+
+def two_sum(numbers, target):
+    nums = {} # create hash
+    for number in numbers:
+        print(number)
+        num_to_find = target - number
+        print(num_to_find)
+        if num_to_find in nums: #check if num_to_find is in hash
+            print(f"{numbers.index(number)}, {nums[num_to_find]}")
+        else:
+            nums[number] = numbers.index(number)
+            print(nums)
+
+two_sum([5, 17, 77, 50], 55)
+
+
+# 2. Given a list of integers, return a bool that represents whether or not all integers in the list can form a sequence of incrementing integers
+# a. Use case: i. {5, 7, 3, 8, 6}  false (no 4 to complete the sequence) ii. {17, 15, 20, 19, 21, 16, 18}  true
+
+
+# 3. Create a function that takes a list of positive and negative numbers. Return a list where the first element is the count of the positive numbers and the second element is the sum of negative numbers. 
+# a. Use case: [7, 9, -3, -32, 107, -1, 36, 95, -14, -99, 21]
+
+
+# 4. Create a function that accepts a string of space separated numbers and returns the highest and lowest number as a string
+# a. Use case: “3 9 0 1 4 8 10 2”  “0 10”
+
+
+# 5. Create a function that accepts a string, check if it’s a valid email address and returns either true or false depending on the valuation. Think about what is necessary to have a valid email address.
+# a. Use case: i. “mike1@gmail.com”  true ii. “gmail.com”  false
+
+
+# 6. Create a function that takes in a string and replaces each letter with its appropriate position in the alphabet and returns the string
+# a. Use case: i. “abc”  “1 2 3” ii. “coding is fun”  “3 15 4 9 14 7 9 19 6 21 14”
+
+
+# 7. A briefcase has a four-digit rolling-lock. Each digit is a number from 0-9 that can be rolled either forwards or backwards. Write a function that returns the smallest number of turns it takes to transform the lock from current combination to the target combination. One turn is equivalent to rolling a number forwards or backwards by one. 
+# a. Use case: i. Current lock: 3893 ii. Target lock: 5296
+
+
+# 8. Given a number, return the reciprocal of the reverse of the original number, as a double. 
+# a. Use case: If given 17, return 0.01408 (1/71)
