@@ -212,7 +212,18 @@ print( 50 * "-")
 # 6. Create a function that takes in a string and replaces each letter with its appropriate position in the alphabet and returns the string
 # a. Use case: i. “abc”  “1 2 3” ii. “coding is fun”  “3 15 4 9 14 7 9 19 6 21 14”
 
+print(ord("a"))
 
+def letters_to_numbers(letters):
+    lower = letters.lower()
+    no_spaces = lower.replace(" ", "")
+    numbers = ""
+    for letter in no_spaces:
+       numbers += str(ord(letter) - 96) + " "
+    return numbers
+
+print(letters_to_numbers("coding is fun"))
+print(letters_to_numbers("Coding is Fun"))
 # 7. A briefcase has a four-digit rolling-lock. Each digit is a number from 0-9 that can be rolled either forwards or backwards. Write a function that returns the smallest number of turns it takes to transform the lock from current combination to the target combination. One turn is equivalent to rolling a number forwards or backwards by one. 
 # a. Use case: i. Current lock: 3893 ii. Target lock: 5296
 
