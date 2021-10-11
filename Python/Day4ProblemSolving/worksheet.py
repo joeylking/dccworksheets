@@ -120,12 +120,29 @@ print( 50 * "-")
 # c. HARDER VERSION: Write a method that does the Fibonacci sequence starting at a 
 # number that a user inputs 
 
-def fibonacci(num1, num2):
-    count = num1
+def fibonacci(num1):
+    fib_numbers = [num1]
+    i = 0
+    while len(fib_numbers) < 11:
+        if i == 0 and fib_numbers[i] == 1:
+            next_number = 1
+        elif i == 1 and fib_numbers[i] == 1:
+            next_number = 2
+        else:
+            # print( "***", fib_numbers[i-1], fib_numbers[i])
+            next_number = fib_numbers[i - 1] + fib_numbers[i]
+        fib_numbers.append(next_number)     
+        i = i + 1
+        # print(next_number, fib_numbers, i)
+    print(fib_numbers)
+    return fib_numbers
+            # if number == 1 &&:
+            #     next_number = 
 
 
 
-fibonacci(1, 100)
+
+fibonacci(1)
 print( 50 * "-")
 
 # 1. Given a list of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -148,6 +165,13 @@ two_sum([5, 17, 77, 50], 55)
 
 # 2. Given a list of integers, return a bool that represents whether or not all integers in the list can form a sequence of incrementing integers
 # a. Use case: i. {5, 7, 3, 8, 6}  false (no 4 to complete the sequence) ii. {17, 15, 20, 19, 21, 16, 18}  true
+
+def is_incrementing_sequence(list):
+    list.sort()
+    print(list)
+    return list
+
+is_incrementing_sequence([17, 15, 20, 19, 21, 16, 18])
 
 
 # 3. Create a function that takes a list of positive and negative numbers. Return a list where the first element is the count of the positive numbers and the second element is the sum of negative numbers. 
