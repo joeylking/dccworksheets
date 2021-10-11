@@ -196,7 +196,14 @@ print( 50 * "-")
 
 # 4. Create a function that accepts a string of space separated numbers and returns the highest and lowest number as a string
 # a. Use case: “3 9 0 1 4 8 10 2”  “0 10”
-
+def max_min(numbers_string):
+    no_spaces = numbers_string.replace(" ", "")
+    numbers_list = list(no_spaces) 
+    max_min_string = f"{max(numbers_list)} {min(numbers_list)}"
+    return max_min_string
+    
+print(max_min("3 9 0 1 4 8 10 2"))
+print( 50 * "-")
 
 # 5. Create a function that accepts a string, check if it’s a valid email address and returns either true or false depending on the valuation. Think about what is necessary to have a valid email address.
 # a. Use case: i. “mike1@gmail.com”  true ii. “gmail.com”  false
