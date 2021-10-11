@@ -1,3 +1,5 @@
+import math
+
 # 1. Reverse a string
 # a. Write code that takes a string as input and returns the string reversed
 # b. i.e. “Hello” will be returned as “olleH”
@@ -162,13 +164,10 @@ print( 50 * "-")
 
 def is_incrementing_sequence(list):
     list.sort()
-    #print(list)
     for i in range(len(list) - 1):
         if list[i] == list[i + 1] - 1:
-            #print('x')
             continue
         else:
-            #print('y')
             return False
     return True
 
@@ -179,6 +178,21 @@ print( 50 * "-")
 # 3. Create a function that takes a list of positive and negative numbers. Return a list where the first element is the count of the positive numbers and the second element is the sum of negative numbers. 
 # a. Use case: [7, 9, -3, -32, 107, -1, 36, 95, -14, -99, 21]
 
+def positive_count_negative_sum(numbers):
+    numbers.sort()
+    positive_numbers = []
+    negative_numbers = []
+    for number in numbers:
+        if number > 0:
+            positive_numbers.append(number)
+        else:
+            negative_numbers.append(number)
+    negative_sum = sum(negative_numbers)
+    positive_count = len(positive_numbers)
+    return [positive_count, negative_sum]
+
+print(positive_count_negative_sum([7, 9, -3, -32, 107, -1, 36, 95, -14, -99, 21]))
+print( 50 * "-")
 
 # 4. Create a function that accepts a string of space separated numbers and returns the highest and lowest number as a string
 # a. Use case: “3 9 0 1 4 8 10 2”  “0 10”
