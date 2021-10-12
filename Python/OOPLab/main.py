@@ -29,8 +29,8 @@ cecilia.add_product(coffee)
 carlos.view_products()
 cecilia.view_products()
 
-print(carlos.shopping_cart.get_total())
-print(cecilia.shopping_cart.get_total())
+carlos.shopping_cart.get_total()
+cecilia.shopping_cart.get_total()
 
 carlos.shopping_cart.empty_cart()
 cecilia.shopping_cart.empty_cart()
