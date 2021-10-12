@@ -14,7 +14,7 @@ carlos = Customer("Carlos")
 cecilia = Customer("Cecilia")
 
 usb = Product("USB drive", 30, "Computer stuff")
-tshirt = Product("Oddly fiting white T-shirt", 45, "Clothing")
+tshirt = Product("Oddly fitting white T-shirt", 45, "Clothing")
 coffee = Product("Super special coffee", 60, "Groceries")
 hat = Product("Baseball cap", 15, "Clothing")
 
