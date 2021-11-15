@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import NamesList from './NamesList/NamesList';
+import AlertUser from './AlertUser/AlertUser';
 
 class App extends Component {
   constructor(props) {
@@ -10,8 +11,12 @@ class App extends Component {
     };
   }
 
+  handleClick = () => {
+    alert('devCodeCamp');
+  };
+
   render() {
-    return <NamesList names={this.state.names} />;
+    return <AlertUser clickAlert={this.handleClick} />;
   }
 }
 
