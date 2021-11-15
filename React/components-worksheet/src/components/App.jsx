@@ -1,13 +1,31 @@
 import React, { Component } from 'react';
 import './App.css';
-import NamesList from './NamesList/NamesList';
-import AlertUser from './AlertUser/AlertUser';
+import SuperheroTable from './SuperheroTable/SuperheroTable';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      names: ['Mike', 'Nevin', 'Aaron', 'Tory', 'Kellie'],
+      superheroes: [
+        {
+          superheroId: 1,
+          name: 'Batman',
+          primaryAbility: 'Wealthy',
+          secondaryAbility: 'Rich',
+        },
+        {
+          superheroId: 2,
+          name: 'Superman',
+          primaryAbility: 'Super strength',
+          secondaryAbility: 'Fly',
+        },
+        {
+          superheroId: 3,
+          name: 'Spiderman',
+          primaryAbility: 'Spider senses',
+          secondaryAbility: 'Shoots web',
+        },
+      ],
     };
   }
 
@@ -16,7 +34,7 @@ class App extends Component {
   };
 
   render() {
-    return <AlertUser clickAlert={this.handleClick} />;
+    return <SuperheroTable superheroes={this.state.superheroes} />;
   }
 }
 
