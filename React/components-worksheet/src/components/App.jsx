@@ -36,7 +36,9 @@ class App extends Component {
 
   addHero = newHero => {
     newHero.superheroId = this.state.superheroes.length + 1;
-    this.state.superheroes.push(newHero);
+    this.setState(prevState => ({
+      superheroes: [...prevState.superheroes, newHero],
+    }));
     console.log(this.state.superheroes);
   };
 
@@ -44,10 +46,7 @@ class App extends Component {
     return (
       <>
         <SuperheroTable superheroes={this.state.superheroes} />
-        <SuperheroCreateForm
-          superheroes={this.state.superheroes}
-          addHero={this.addHero}
-        />
+        <SuperheroCreateForm addHero={this.addHero} />
       </>
     );
   }
