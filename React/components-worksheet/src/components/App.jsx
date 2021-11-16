@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SuperheroTable from './SuperheroTable/SuperheroTable';
+import SuperheroCreateForm from './SuperheroCreateForm/SuperheroCreateForm';
 
 class App extends Component {
   constructor(props) {
@@ -33,8 +34,22 @@ class App extends Component {
     alert('devCodeCamp');
   };
 
+  addHero = newHero => {
+    newHero.superheroId = this.state.superheroes.length + 1;
+    this.state.superheroes.push(newHero);
+    console.log(this.state.superheroes);
+  };
+
   render() {
-    return <SuperheroTable superheroes={this.state.superheroes} />;
+    return (
+      <>
+        <SuperheroTable superheroes={this.state.superheroes} />
+        <SuperheroCreateForm
+          superheroes={this.state.superheroes}
+          addHero={this.addHero}
+        />
+      </>
+    );
   }
 }
 
